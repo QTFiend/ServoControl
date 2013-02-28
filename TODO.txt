@@ -1,30 +1,53 @@
+You know those comments you are writing? They are not good enough, this has to be used everywhere.
+
+Add a wiki page for the sweep concepts, with how they are implemented on the board.
+
 Fix memory leak in 'SerialWidget::initOptionsWidget()' in file: 'serial_widget.cpp'
 
 Add configurable limits for ServoBoard Max and Min values (ie. adjustable range) ex: 0-97
 	-Factor out constants to a single file
 
-Respond to global values seqReplay, PWMSweep, PWM replay
+Make servo bundles show up on the designer page.
 
-Factor out maps for PWMRepeat and SequenceRepeat to have one map for all classes.
+Add a way to see current global values.
 
-Highlighting as the play functions runs
-	-stop and pause for playing sequences.
+Test the burning of the start servo positions.
 
-Get the save function working correctly. 
-	-check if there are unsaved changes on close/load and prompt to save.
+Find a way to make long string lines wrap on \n for unit test readibility.
 
-The keep changes without prompt is unchecked at the start, but acts as though it has been checked.
+Convert the files to the markdown format so they are more readable, and include them in the wiki.
+
+Maybe refactor some of the code out of position and sequence (how long should they be?)
+
+Documentation for how to use the program included in the build.
+
+Calculate if there is a problem with the time for a sweep to finish before the computer.
+
+Temp file write on run and tab switch.
+
+Make the locations update accurately for sweeps.
+
+Make a way to set a default position that the board will snap to on failure.
+
+Make servoboxes larger and and use them to display more data.
+
+Add a way to show the number of times that a sequence has been played and the number of times that it will be played.
+
+Add to sequence a check to see if it is compatible with the store commands.
+
+Software only delay, shorter than what we have. Notate that these cannot be placed in hardware.
+
+Respond to global values PWMSweep, PWM replay
 
 Make the interactions for playing and pausing cleaner, maybe have buttons showing and hiding when they are (not) needed.
 
-Check to see if freeze really works at all. 
+Factor out maps for PWMRepeat and SequenceRepeat to have one map for all classes.
 
-Get the save function working correctly. 
-	-check for save or save as on exit.
+Check if there are unsaved changes on close/load and prompt to save.
+
+Make the interactions for playing and pausing cleaner, maybe have buttons showing and hiding when they are (not) needed.
 
 Find out if the timer in ServoBoardController is leaking memory.
-
-A way to set the global sequence delay and repeat.
 
 Make advanced options popup cleaner.
 
@@ -39,6 +62,22 @@ Add an automatic updater to grab updates from a server.
 Make a real style sheet for all the pages, add images to the play button ect. 
 	-Make the background colors constant.
 
+Turn trace into a complete hyperterminal replacment for debugging.
+
+Make syntax highlighting look more usefull, display data better.
+
+Emergency stop for runnning a sequence
+
+Networking tab doesn't get a AbstactSerialPointer anymore, need to get it a pointer if needed.
+
+Turn comments into Deoxygen format or similar to generate documentation.
+
+Somebody get units tests all up in this stuff.
+
 ADAM QUESTIONABLE DESIGN CHOICES
+
+Static member used to track filename for save function. Not sure if that is The Right Thing.
+
+Servoboard Controller pops up a few file dialogs and thus breaks MVC
 
 Got rid of position inheriting QObject, it didn't need any of the function, and a copy constructor is great for such a small class.
