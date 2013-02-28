@@ -5,6 +5,15 @@
 # In repository we don't need to have:
 #
 
+#For testing
+
+tst/*
+!tst/serial_app_tst/
+!tst/serial_app_tst/*
+
+#Ignore documentation
+doc/*
+
 # Compiled object files
 *.o
 *.so
@@ -19,6 +28,8 @@ ui_*.h
 
 # Custom user settings for QT Creator
 *.user
+*.user.*
+*.autosave
 
 # Debug and Release directories (created under Windows, not Linux)
 Debug/
